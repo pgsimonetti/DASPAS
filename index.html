@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DASPAS</title>
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DASPAS - Clientes</title><link rel="stylesheet" href="styles.css"></head>
 <body>
-  <h1 style="color: blue;">DASPAS</h1>
-</body>
-</html>
+<header class="topbar"><div><h1>DASPAS</h1><p>Gestión de afiliados y clientes</p></div><button id="btnNuevo" class="primary">+ Nuevo cliente</button></header>
+<main class="container">
+<section class="card search-card"><label for="buscar">Buscar registros</label><input id="buscar" type="search" placeholder="Apellido, nombre, DNI, Nro. Afiliado o sindicato..."></section>
+<section class="card"><div class="section-title"><h2>Clientes</h2><span id="contador" class="badge">0 registros</span></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Nro. Afiliado</th><th>Apellido y nombre</th><th>DNI</th><th>Sindicato</th><th>Categoría</th><th>Localidad</th><th>Teléfono</th><th>Acciones</th></tr></thead><tbody id="tablaClientes"></tbody></table></div><p id="sinResultados" class="empty">No hay registros para mostrar.</p></section>
+<section id="panelFormulario" class="card hidden"><div class="section-title"><h2 id="tituloFormulario">Nuevo cliente</h2><button id="btnCerrar" class="secondary">Cerrar</button></div>
+<form id="formCliente"><input type="hidden" id="id"><div class="grid">
+<div><label>Nro. Afiliado<input id="nro_afiliado" required></label></div><div><label>Sindicato<input id="sindicato" required></label></div><div><label>Categoría<select id="categoria" required><option>Activo</option><option>Jubilado</option><option>Individual</option></select></label></div><div><label>Apellido<input id="apellido" required></label></div><div><label>Nombre<input id="nombre" required></label></div><div><label>Documento<input id="documento" required></label></div><div class="wide"><label>Dirección<input id="direccion"></label></div><div><label>Localidad<input id="localidad"></label></div><div><label>Código postal<input id="cod_postal"></label></div><div><label>Provincia<input id="provincia"></label></div><div><label>Teléfono<input id="telefono"></label></div><div><label>Correo electrónico<input id="correo_electronico" type="email"></label></div><div class="wide"><label>Datos adjuntos<input id="datos_adjuntos" type="file"></label><small id="archivoActual"></small></div><div class="wide"><label>Notas<textarea id="notas" rows="4"></textarea></label></div>
+</div><div class="form-actions"><button type="submit" class="primary">Guardar cliente</button><button type="button" id="btnCancelar" class="secondary">Cancelar</button></div></form></section>
+</main><script src="app.js"></script></body></html>
